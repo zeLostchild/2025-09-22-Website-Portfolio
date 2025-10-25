@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+html,
+body {
+    scroll-snap-type: y mandatory;
+    font-size: 2vh;
+}
+
+p {
+    line-height: 2.6em;
+    font-weight: 300;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+.outer-marq {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    color: var(--spring-green);
+}
+
+.inner-marq-txt {
+    white-space: nowrap;
+}
+
+.inner-marq-symb {
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    font-size: 1.6em;
+}
+
+.inner-marq {
+    display: inline-flex;
+    align-items: center;
+    font-size: 4.96vh;
+}
+
+@keyframes scroll-forward {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(calc(0));
+    }
+}
+
+.inner-marq {
+    animation: scroll-forward 25s linear infinite;
+}
+
+.snap {
+    scroll-snap-align: start;
+}
+
+.project {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-bottom: 2vh;
+    outline: 1px solid #000;
+    padding: 2vh 8vh 2vh 4vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.project-title {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.project-text {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.project {
+    height: 12vh;
+    overflow: hidden;
+    transition: height 400ms ease;
+    position: relative;
+    z-index: 0;
+    background: #fff;
+
+    /* base white background */
+}
+
+.project::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 400ms ease;
+    z-index: -1;
+}
+
+/* individual images */
+#konektin::before {
+    background-image: url('../assets/konektin/phone_wall.jpg');
+}
+
+#new::before {
+    background-image: url('../assets/new_otani/hero.jpg');
+}
+
+#midnight::before {
+    background-image: url('../assets/midnight_pizza/hero.jpg');
+}
+
+#part::before {
+    background-image: url('../assets/pt_philosopher/pouch_front.jpg');
+}
+
+#lost::before {
+    background-image: url('../assets/lost_stream/headphones.jpg');
+}
+
+.project:hover,
+.project:focus-within {
+    height: 40vh;
+}
+
+.project:hover::before,
+.project:focus-within::before {
+    opacity: 1;
+
+    /* fade from white → image */
+}
