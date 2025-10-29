@@ -109,11 +109,11 @@ a {
 }
 
 #new::before {
-    background-image: url('../assets/new_otani/hero.jpg');
+    background-image: url('../assets/new_otani/hero_index.jpg');
 }
 
 #midnight::before {
-    background-image: url('../assets/midnight_pizza/hero.jpg');
+    background-image: url('../assets/midnight_pizza/hero_index.jpg');
 }
 
 #part::before {
@@ -121,7 +121,7 @@ a {
 }
 
 #lost::before {
-    background-image: url('../assets/lost_stream/headphones.jpg');
+    background-image: url('../assets/lost_stream/hero_index.jpg');
 }
 
 .project:hover,
